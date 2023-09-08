@@ -5,38 +5,27 @@
  *
  * Return: always 0
  */
-
 int main(void)
 {
-	int i, j;
+	int n;
+	int m;
 
-	for (i = 0; i <= 9; i++)
+	for (n = 48 ; n <= 56 ; n++)
 	{
-		for (j = i + 1; j <= 9; j++)
+		for (m = 49 ; m <= 57 ; m++)
 		{
-			int firstDigit = i;
-			int secondDigit = j;
-
-			if (firstDigit > secondDigit)
+			if (m > n)
 			{
-				int temp = firstDigit;
-
-				firstDigit = secondDigit;
-				secondDigit = temp;
-			}
-
-			putchar((firstDigit / 10) + '0');
-			putchar((firstDigit % 10) + '0');
-
-			if (i != 8 || j != 9)
-			{
-				putchar(',');
-				putchar(' ');
+				putchar(n);
+				putchar(m);
+				if (n != 56 || m != 57)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 	}
-
 	putchar('\n');
-
 	return (0);
 }
