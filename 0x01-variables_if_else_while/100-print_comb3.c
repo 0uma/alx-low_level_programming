@@ -8,8 +8,7 @@
 
 int main(void)
 {
-	int i;
-	int j;
+	int i, j;
 
 	for (i = 0; i <= 9; i++)
 	{
@@ -20,18 +19,24 @@ int main(void)
 
 			if (firstDigit > secondDigit)
 			{
-				firstDigit = firstDigit ^ secondDigit;
-				secondDigit = firstDigit ^ secondDigit;
-				firstDigit = firstDigit ^ secondDigit;
+				int temp = firstDigit;
+
+				firstDigit = secondDigit;
+				secondDigit = temp;
 			}
-			putchar(firstDigit / 10 + '0');
-			putchar(firstDigit % 10 + '0');
-			putchar(',');
-			putchar(' ');
-			putchar(secondDigit / 10 + '0');
-			putchar(secondDigit % 10 + '0');
-			putchar('\n');
+
+			putchar((firstDigit / 10) + '0');
+			putchar((firstDigit % 10) + '0');
+
+			if (i != 8 || j != 9)
+			{
+				putchar(',');
+				putchar(' ');
+			}
 		}
 	}
+
+	putchar('\n');
+
 	return (0);
 }
